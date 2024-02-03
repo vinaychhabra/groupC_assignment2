@@ -36,6 +36,11 @@ func armstrongNumber(value int) bool {
 
 }
 
+// ageinmonths function
+func ageInMonths(years int) int {
+	return years * 12
+}
+
 // Main Function
 func main() {
 
@@ -45,4 +50,10 @@ func main() {
 	fmt.Scanln(&isArmstrongNumber)
 	inputInt, _ := strconv.Atoi(isArmstrongNumber)
 	armstrongNumber(inputInt)
+	//age in months
+	var age int
+	fmt.Println("Enter age in years")
+	fmt.Scan(&age)
+
+	ageInMonths(age)
 }
