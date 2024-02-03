@@ -59,7 +59,8 @@ func createfibonacci(n int) []int { // By Jevica
 	return fibSeries
 
 }
-//Function to check if the number is a perfect square
+
+// Function to check if the number is a perfect square
 func isPerfectSquare(num int) bool { //ByAshbir 500228410
 	if num < 0 {
 		return false
@@ -72,10 +73,24 @@ func isPerfectSquare(num int) bool { //ByAshbir 500228410
 	return sqrt*sqrt == num
 }
 
+//Function isLeapYear()
+
+func isLeapYear(year int) bool {
+
+	if year%4 == 0 {
+
+		if year%100 != 0 || year%100 == 0 && year%400 == 0 {
+
+			return true
+		}
+
+	}
+	return false
+}
+
 // Main Function
 func main() {
 
-	
 	// Fibonacci function call -500218849
 	fmt.Println("Kindly enter the input value to create fibonacci series")
 	var fibno string
@@ -102,13 +117,11 @@ func main() {
 	// Print the result
 	fmt.Printf("%d is a perfect square: %t\n", perfectnumber, result)
 
-
 	//Armstrong Main Function
 	var isArmstrongNumber int
 	fmt.Println("Kindly enter the input value to check if number is armstrong number")
 	fmt.Scan(&isArmstrongNumber)
-	armstrongNumber(isArmstrongNumber);
-
+	armstrongNumber(isArmstrongNumber)
 
 	//age in months
 	var age int
@@ -117,4 +130,14 @@ func main() {
 
 	fmt.Println(ageInMonths(age))
 
+	//isLeapYearfmt.Println("Kindly enter the input value to check year is leap year")
+	var isLeapYearNumber string
+	fmt.Scanln(&isLeapYearNumber)
+
+	isLeapYearNumberInt, _ := strconv.Atoi(isLeapYearNumber)
+	if isLeapYear(isLeapYearNumberInt) {
+		fmt.Println("It is a LEAP year")
+	} else {
+		fmt.Println("NOT a leap year")
+	}
 }
