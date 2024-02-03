@@ -41,9 +41,42 @@ func ageInMonths(years int) int {
 	return years * 12
 }
 
+// Function to generate Fibonacci series up to n terms
+func createfibonacci(n int) []int { // By Jevica
+
+	if n <= 0 {
+		fmt.Println("Inavlid Input")
+		main()
+	}
+	fibSeries := make([]int, n)
+	fibSeries[0], fibSeries[1] = 0, 1
+
+	for i := 2; i < n; i++ {
+		fibSeries[i] = fibSeries[i-1] + fibSeries[i-2]
+	}
+
+	return fibSeries
+
+}
+
 // Main Function
 func main() {
 
+	// Fibonacci function call -500218849
+	fmt.Println("Kindly enter the input value to create fibonacci series")
+	var fibno string
+	fmt.Scanln(&fibno)
+	// Convert the input to an integer
+	number, err := strconv.Atoi(fibno)
+
+	fmt.Print(fibno)
+	if err != nil || number <= 0 {
+		fmt.Println("Invalid input. Please enter a positive integer.")
+		return
+	}
+
+	fibSeries := createfibonacci(number)
+	fmt.Printf("Fibonacci Series up to %d terms: %v\n", number, fibSeries)
 	//Armstrong Main Function
 	fmt.Println("Kindly enter the input value to check if number is armstrong number")
 	var isArmstrongNumber string
@@ -55,5 +88,6 @@ func main() {
 	fmt.Println("Enter age in years")
 	fmt.Scan(&age)
 
-	ageInMonths(age)
+	fmt.Println(ageInMonths(age))
+
 }
