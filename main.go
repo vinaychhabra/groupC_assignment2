@@ -69,7 +69,7 @@ func main() {
 	// Convert the input to an integer
 	number, err := strconv.Atoi(fibno)
 
-	fmt.Print(fibno)
+	//fmt.Print(fibno)
 	if err != nil || number <= 0 {
 		fmt.Println("Invalid input. Please enter a positive integer.")
 		return
