@@ -98,6 +98,18 @@ func factorial(number int) int {
 	return result
 }
 
+// this function is to check number is positive, negative or zero
+func checkNumber(num int) string {
+	switch {
+	case num > 0:
+		return "Positive"
+	case num < 0:
+		return "Negative"
+	default:
+		return "Zero"
+	}
+}
+
 // Main Function
 func main() {
 
@@ -157,6 +169,9 @@ func main() {
 	var facto_number int
 	fmt.Scan(&facto_number)
 	fmt.Println(factorial(facto_number))
+
+	fmt.Println("------------------------------------------------------------------------------------------------")
+	fmt.Println(checkNumber(5))
 
 	fmt.Println("------------------------------------------------------------------------------------------------")
 }
