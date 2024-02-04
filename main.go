@@ -110,6 +110,21 @@ func checkNumber(num int) string {
 	}
 }
 
+func isPrime(num int) {
+	if num < 2 {
+		fmt.Printf("%d is not a prime number.\n", num)
+		return
+	}
+	maxDivisor := int(math.Sqrt(float64(num)))
+	for i := 2; i <= maxDivisor; i++ {
+		if num%i == 0 {
+			fmt.Printf("%d is not a prime number.\n", num)
+			return
+		}
+	}
+	fmt.Printf("%d is a prime number.\n", num)
+}
+
 // Main Function
 func main() {
 
@@ -174,4 +189,13 @@ func main() {
 	fmt.Println(checkNumber(5))
 
 	fmt.Println("------------------------------------------------------------------------------------------------")
+	// Prompt the user to enter a number
+	fmt.Println("Enter a number to check if number is prime: ")
+	var checkPrimeNumber int
+	fmt.Scan(&checkPrimeNumber)
+
+	isPrime(checkPrimeNumber)
+
+	fmt.Println("------------------------------------------------------------------------------------------------")
+
 }
