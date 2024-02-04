@@ -88,6 +88,16 @@ func isLeapYear(year int) bool {
 	return false
 }
 
+// this fucntion will take int as integer and return factorial of that number
+func factorial(number int) int {
+	result := 1
+
+	for i := 2; i <= number; i++ {
+		result = result * i
+	}
+	return result
+}
+
 // Main Function
 func main() {
 
@@ -130,7 +140,8 @@ func main() {
 
 	fmt.Println(ageInMonths(age))
 
-	//isLeapYearfmt.Println("Kindly enter the input value to check year is leap year")
+	//isLeapYear
+	fmt.Println("Kindly enter the input value to check year is leap year")
 	var isLeapYearNumber string
 	fmt.Scanln(&isLeapYearNumber)
 
@@ -140,4 +151,12 @@ func main() {
 	} else {
 		fmt.Println("NOT a leap year")
 	}
+
+	fmt.Println("------------------------------------------------------------------------------------------------")
+	fmt.Println(("Enter a number to find factorial: "))
+	var facto_number int
+	fmt.Scan(&facto_number)
+	fmt.Println(factorial(facto_number))
+
+	fmt.Println("------------------------------------------------------------------------------------------------")
 }
