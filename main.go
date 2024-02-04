@@ -130,6 +130,24 @@ func isEven(num int) bool {
 	return num%2 == 0
 }
 
+func temperatureConverter(temperatureInput string) {
+
+	// Convert input to float
+	temperatureCelsius, err := strconv.ParseFloat(temperatureInput[:len(temperatureInput)-1], 64)
+	//This line converts the input string to a floating-point number using strconv.ParseFloat
+	// It removes the newline character at the end using [:len(temperatureInput)-1]
+	if err != nil {
+		fmt.Println("Invalid input. Please enter a valid temperature.")
+		return
+	}
+
+	// Convert Celsius to Fahrenheit using the formula
+	temperatureFahrenheit := (9 * temperatureCelsius / 5) + 32
+
+	// Print the result with 2 decimal places
+	fmt.Printf("Temperature in Fahrenheit: %.2f\n", temperatureFahrenheit)
+}
+
 // Main Function
 func main() {
 
@@ -149,6 +167,8 @@ func main() {
 	fibSeries := createfibonacci(number)
 	fmt.Printf("Fibonacci Series up to %d terms: %v\n", number, fibSeries)
 
+	fmt.Println("------------------------------------------------------------------------------------------------")
+
 	// Perfect Square - 500228410
 	var perfectnumber int
 	fmt.Println("Enter a number to check a perfect square: ")
@@ -159,11 +179,15 @@ func main() {
 	// Print the result
 	fmt.Printf("%d is a perfect square: %t\n", perfectnumber, result)
 
+	fmt.Println("------------------------------------------------------------------------------------------------")
+
 	//Armstrong Main Function
 	var isArmstrongNumber int
 	fmt.Println("Kindly enter the input value to check if number is armstrong number")
 	fmt.Scan(&isArmstrongNumber)
 	armstrongNumber(isArmstrongNumber)
+
+	fmt.Println("------------------------------------------------------------------------------------------------")
 
 	//age in months
 	var age int
@@ -171,7 +195,7 @@ func main() {
 	fmt.Scan(&age)
 
 	fmt.Println(ageInMonths(age))
-
+	fmt.Println("------------------------------------------------------------------------------------------------")
 	//isLeapYear
 	fmt.Println("Kindly enter the input value to check year is leap year")
 	var isLeapYearNumber string
@@ -215,4 +239,9 @@ func main() {
 		fmt.Printf("%d is an odd number.\n", num)
 	}
 	fmt.Println("------------------------------------------------------------------------------------------------")
+	// Read temperature in Celsius from user
+	fmt.Println("Enter temperature in Celsius: ")
+	var temperature string
+	fmt.Scanln(&temperature)
+	temperatureConverter(temperature)
 }
