@@ -125,6 +125,11 @@ func isPrime(num int) {
 	fmt.Printf("%d is a prime number.\n", num)
 }
 
+// Function to check if a number is even
+func isEven(num int) bool {
+	return num%2 == 0
+}
+
 // Main Function
 func main() {
 
@@ -198,4 +203,16 @@ func main() {
 
 	fmt.Println("------------------------------------------------------------------------------------------------")
 
+	// Prompt the user to enter a number
+	fmt.Print("Enter a number: ")
+	var num int
+	fmt.Scan(&num)
+
+	// Check if the number is even or odd
+	if isEven(num) {
+		fmt.Printf("%d is an even number.\n", num)
+	} else {
+		fmt.Printf("%d is an odd number.\n", num)
+	}
+	fmt.Println("------------------------------------------------------------------------------------------------")
 }
