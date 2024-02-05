@@ -79,7 +79,7 @@ func isLeapYear(year int) bool {
 
 	if year%4 == 0 {
 
-		if year%100 != 0 || year%100 == 0 && year%400 == 0 {
+		if year%100 != 0 || (year%100 == 0 && year%400 == 0) {
 
 			return true
 		}
@@ -88,7 +88,7 @@ func isLeapYear(year int) bool {
 	return false
 }
 
-// this fucntion will take int as integer and return factorial of that number
+// this function will take int as integer and return factorial of that number
 func factorial(number int) int {
 	result := 1
 
@@ -110,6 +110,7 @@ func checkNumber(num int) string {
 	}
 }
 
+// this function prints if a number is prime or not
 func isPrime(num int) {
 	if num < 2 {
 		fmt.Printf("%d is not a prime number.\n", num)
@@ -148,40 +149,40 @@ func temperatureConverter(temperatureInput string) {
 	fmt.Printf("Temperature in Fahrenheit: %.2f\n", temperatureFahrenheit)
 }
 
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
+
 // Main Function
 func main() {
 
-	// Fibonacci function call -500218849
+	// createfibonacci() function call -500218849
 	fmt.Println("Kindly enter the input value to create fibonacci series")
 	var fibno string
 	fmt.Scanln(&fibno)
-	// Convert the input to an integer
-	number, err := strconv.Atoi(fibno)
 
-	// fmt.Print(fibno)
+	number, err := strconv.Atoi(fibno) // Convert the input to an integer
+
 	if err != nil || number <= 0 {
 		fmt.Println("Invalid input. Please enter a positive integer.")
 		return
 	}
 
 	fibSeries := createfibonacci(number)
-	fmt.Printf("Fibonacci Series up to %d terms: %v\n", number, fibSeries)
+	fmt.Printf("Fibonacci Series up to %d terms: %v\n", number, fibSeries) // fmt.Print(fibno)
 
 	fmt.Println("------------------------------------------------------------------------------------------------")
 
-	// Perfect Square - 500228410
+	// isPerfectSquare() function call - 500228410
 	var perfectnumber int
 	fmt.Println("Enter a number to check a perfect square: ")
-	// Get input from user
-	fmt.Scan(&perfectnumber)
-	// Check if the input is a perfect square
-	result := isPerfectSquare(perfectnumber)
-	// Print the result
-	fmt.Printf("%d is a perfect square: %t\n", perfectnumber, result)
+
+	fmt.Scan(&perfectnumber)                 // Get input from user
+	result := isPerfectSquare(perfectnumber) // Check if the input is a perfect square
+
+	fmt.Printf("%d is a perfect square: %t\n", perfectnumber, result) // Print the result
 
 	fmt.Println("------------------------------------------------------------------------------------------------")
 
-	//Armstrong Main Function
+	// isArmstrongNumber() function call
 	var isArmstrongNumber int
 	fmt.Println("Kindly enter the input value to check if number is armstrong number")
 	fmt.Scan(&isArmstrongNumber)
@@ -189,19 +190,20 @@ func main() {
 
 	fmt.Println("------------------------------------------------------------------------------------------------")
 
-	//age in months
+	// ageInMonths() function call
 	var age int
-	fmt.Println("Enter age in years")
+	fmt.Println("Enter age in years to convert it to months")
 	fmt.Scan(&age)
 
 	fmt.Println(ageInMonths(age))
 	fmt.Println("------------------------------------------------------------------------------------------------")
-	//isLeapYear
-	fmt.Println("Kindly enter the input value to check year is leap year")
-	var isLeapYearNumber string
-	fmt.Scanln(&isLeapYearNumber)
 
-	isLeapYearNumberInt, _ := strconv.Atoi(isLeapYearNumber)
+	// isLeapYear() function call
+	fmt.Println("Kindly enter the input value to check year is leap year") //user prompt
+	var isLeapYearNumber string
+	fmt.Scanln(&isLeapYearNumber) // user input
+
+	isLeapYearNumberInt, _ := strconv.Atoi(isLeapYearNumber) // convert string to int
 	if isLeapYear(isLeapYearNumberInt) {
 		fmt.Println("It is a LEAP year")
 	} else {
@@ -209,37 +211,45 @@ func main() {
 	}
 
 	fmt.Println("------------------------------------------------------------------------------------------------")
+
+	// factorial() function call
 	fmt.Println(("Enter a number to find factorial: "))
 	var facto_number int
 	fmt.Scan(&facto_number)
 	fmt.Println(factorial(facto_number))
 
 	fmt.Println("------------------------------------------------------------------------------------------------")
-	fmt.Println(checkNumber(5))
+
+	//checkNumber() function call
+	fmt.Println(("Enter a number to check if it's positive or negative: "))
+	var number_check int
+	fmt.Scan(&number_check)
+	fmt.Println(checkNumber(number_check))
 
 	fmt.Println("------------------------------------------------------------------------------------------------")
-	// Prompt the user to enter a number
+
+	// checkPrimeNumber() function call
 	fmt.Println("Enter a number to check if number is prime: ")
 	var checkPrimeNumber int
 	fmt.Scan(&checkPrimeNumber)
-
 	isPrime(checkPrimeNumber)
 
 	fmt.Println("------------------------------------------------------------------------------------------------")
 
-	// Prompt the user to enter a number
+	//isEven()  function call
 	fmt.Print("Enter a number: ")
 	var num int
 	fmt.Scan(&num)
 
-	// Check if the number is even or odd
 	if isEven(num) {
 		fmt.Printf("%d is an even number.\n", num)
 	} else {
 		fmt.Printf("%d is an odd number.\n", num)
 	}
+
 	fmt.Println("------------------------------------------------------------------------------------------------")
-	// Read temperature in Celsius from user
+
+	// temperatureConverter() function call
 	fmt.Println("Enter temperature in Celsius: ")
 	var temperature string
 	fmt.Scanln(&temperature)
